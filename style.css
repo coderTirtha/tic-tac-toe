@@ -1,0 +1,219 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+h1 {
+    margin-top: 0;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    margin-top: 20px;
+}
+
+.cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    background-color: #fff;
+    border: 2px solid #333;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    width: 100px;
+    height: 100px;
+}
+
+.cell.X {
+    color: #333;
+}
+
+.cell.O {
+    color: #f4f4f4;
+    background-color: #333;
+}
+
+.message {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.restart-button {
+    display: none;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #f4f4f4;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.restart-button:hover {
+    background-color: #555;
+}
+
+/* Radio Button Styling */
+.mode-selection {
+    margin-top: 20px;
+}
+
+label {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+}
+
+.radio-style {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #333;
+    border-radius: 50%;
+    margin-right: 5px;
+    position: relative;
+}
+
+.radio-style::after {
+    content: "";
+    display: none;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #333;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+input[type="radio"] {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+input[type="radio"]:checked + .radio-style::after {
+    display: block;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #333;
+    color: #f4f4f4;
+}
+
+body.dark-mode .cell {
+    background-color: #f4f4f4;
+    border-color: #f4f4f4;
+}
+
+body.dark-mode .cell.X {
+    color: #f4f4f4;
+    background-color: #333;
+}
+
+body.dark-mode .cell.O {
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+body.dark-mode .message {
+    color: #f4f4f4;
+}
+
+body.dark-mode .restart-button {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+body.dark-mode .restart-button:hover {
+    background-color: #ccc;
+}
+
+body.dark-mode label {
+    color: #f4f4f4;
+}
+
+body.dark-mode .radio-style {
+    border-color: #f4f4f4;
+}
+
+body.dark-mode .radio-style::after {
+    background-color: #f4f4f4;
+}
+
+body.dark-mode input[type="radio"]:checked + .radio-style::after {
+    background-color: #333;
+}
+
+/* Stylish Enhancements */
+.mode-selection label.radio-style::after {
+    border: 2px solid #333;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease-in-out;
+}
+
+.mode-selection input[type="radio"]:checked + label.radio-style::after {
+    border: 5px solid #333;
+    width: 10px;
+    height: 10px;
+    background-color: #f4f4f4;
+    transition: all 0.3s ease-in-out;
+}
+
+.restart-button {
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+    border-radius: 5px;
+    margin: 1rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.restart-button:hover {
+    background-color: #555;
+    transform: translateY(-2px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.16);
+}
+
+#dark-mode-toggle {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #f4f4f4;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+}
+
+#dark-mode-toggle:hover {
+    background-color: #555;
+    transform: translateY(-2px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.16);
+}
